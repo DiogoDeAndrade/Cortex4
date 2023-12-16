@@ -1,6 +1,6 @@
 # THE CORTEX CHRONICLES, CHAPTER 4 - The Heist of ...
 
-![TitleImage](Screenshots/screen01.png)
+![TitleImage](screenshots/screen01.png)
 
 Developed for the Game Creator's Club at Lusofona University.
 This month, the theme was "New Year Resolution", so the game is about a heist during a new year's party.
