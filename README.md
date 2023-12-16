@@ -10,6 +10,13 @@ This time, I'm using Godot 4. I'm still learning, so don't expect amazing code! 
 This is a part of what I hope will be "The Cortex Chronicles" - I want all the games I do for the Game Creator's Club this year to be linked together, hence this idea.
 I also want to use a different engine on every entry, so let's see how that goes! :)
 
+## Todo
+
+- Interact with objects
+- Display text messages
+- Improve ZX shader to use world-space UVs for the dithering effect
+- Improve art overall (polish)
+
 ## Art
 
 Art was done by me (mostly with Asset Forge, and some Synty Studios props). Also used a shader I designed to give a retro 3d look (https://github.com/DiogoDeAndrade/dithered_palette).

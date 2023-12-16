@@ -1,0 +1,10 @@
+# Made using Asset Forge (2.3.0)
+
+:materials
+
+[name:metalGreen;color:RGBA(0.030, 0.434, 0.322, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.35;valueB:0.75;]
+[name:metal;color:RGBA(0.358, 0.352, 0.469, 1.000);scale:(1.0, 1.0);shader:Default;valueA:0.35;valueB:0.25;]
+
+:models
+
+[name:;collection:Vehicles;type:tank_turretBlock;position:(0.0000, 0.0000, 0.0000);rotation:(270.0000, 180.0000, 0.0000);scale:(0.2000, 0.2000, 0.2000);group:;locked:False;hidden:False;materials:metalGreen+metal;]
