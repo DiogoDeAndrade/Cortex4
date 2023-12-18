@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cawix4oao53vt"]
+
+[ext_resource type="FontFile" uid="uid://bhyg50mn56w67" path="res://data/FORCED SQUARE.ttf" id="1_3bqw0"]
+
+[resource]
+default_font = ExtResource("1_3bqw0")
+default_font_size = 40

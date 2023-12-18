@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+class_name Player
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -8,10 +9,10 @@ const MOUSE_SPEED = 0.01
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var interactable : Node3D = null
+var inventory : Array[String] = []
 
 # Auto initialized variables
 @onready var camera := $Camera3D
-
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -46,17 +47,7 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func has_item(item):
+	return inventory.has(item)
 	
-	# Raycast to check for interactables
-	"""interactable = null;
-	var from = camera.global_position
-	var to = from + camera.transform.basis * Vector3(0, 0, -1) * 100.0
-	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(from, to, 1 << 23)
-	var result = space_state.intersect_ray(query)
-	if result.is_empty():
-		print("Pos=" + str(from) + " / To = " + str(to))
-		print("No hit!")
-	else:
-		print("Hit!")
-	"""

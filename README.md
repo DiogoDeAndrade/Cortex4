@@ -12,8 +12,9 @@ I also want to use a different engine on every entry, so let's see how that goes
 
 ## Todo
 
-- Interact with objects
+- Display interactables in some way
 - Display text messages
+- Interact with objects
 - Improve ZX shader to use world-space UVs for the dithering effect
 - Improve art overall (polish)
 
@@ -25,6 +26,7 @@ Art was done by me (mostly with Asset Forge, and some Synty Studios props). Also
 
 * All game source code by Diogo de Andrade is licensed under the [MIT] license.
 * Some props by [Synty Studios]
+* Font [Forced Square] by Friendly Fonts, free for personal use.
 * All remaining art by Diogo de Andrade, available throught the [CC0] license.
 
 ## Metadata
@@ -36,4 +38,5 @@ Art was done by me (mostly with Asset Forge, and some Synty Studios props). Also
 [Synty Studios]:https://www.syntystudios.com/
 [CC0]:https://creativecommons.org/publicdomain/zero/1.0/
 [CC-BY 3.0]:https://creativecommons.org/licenses/by/3.0/
+[Forced Square]:https://www.dafont.com/pt/forced-square.font
 [MIT]:LICENSE
