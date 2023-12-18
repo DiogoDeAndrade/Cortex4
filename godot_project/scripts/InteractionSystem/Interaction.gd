@@ -4,9 +4,7 @@ class_name Interaction
 
 signal selectionChanged(interactable : Interactable)
 
-var current_collider
-
-@onready var interactionText : InteractionText = $"/UI/InteractionText"
+var current_collider : Interactable = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

@@ -1,4 +1,4 @@
-# THE CORTEX CHRONICLES, CHAPTER 4 - The Heist of ...
+# THE CORTEX CHRONICLES, CHAPTER 4 - The Heist of Nyx Sterling
 
 ![TitleImage](screenshots/screen01.png)
 
@@ -12,26 +12,30 @@ I also want to use a different engine on every entry, so let's see how that goes
 
 ## Todo
 
-- Display interactables in some way
 - Display text messages
 - Interact with objects
+- "Cutscenes"
 - Improve ZX shader to use world-space UVs for the dithering effect
 - Improve art overall (polish)
+  - Party: decorations, city skyline
+- Bugs
+  - Camera control is wrong - something camera flips
 
 ## Art
 
-Art was done by me (mostly with Asset Forge, and some Synty Studios props). Also used a shader I designed to give a retro 3d look (https://github.com/DiogoDeAndrade/dithered_palette).
+Art was done by me (mostly with Asset Forge, and some Synty Studios props). 
+Some [Midjourney] was also used, all filtered with a shader I designed to give a [retro 3d look].
 
 ## Licenses
 
-* All game source code by Diogo de Andrade is licensed under the [MIT] license.
-* Some props by [Synty Studios]
-* Font [Forced Square] by Friendly Fonts, free for personal use.
-* All remaining art by Diogo de Andrade, available throught the [CC0] license.
+- All game source code by Diogo de Andrade is licensed under the [MIT] license.
+- Some props by [Synty Studios] - can't be used freely
+- Font [Forced Square] by Friendly Fonts, free for personal use.
+- All remaining art by Diogo de Andrade, available throught the [CC0] license.
 
 ## Metadata
 
-* Autor: [Diogo Andrade]
+- Autor: [Diogo Andrade]
 
 [Diogo Andrade]:https://github.com/DiogoDeAndrade
 [Midjourney]:https://www.midjourney.com/home/
@@ -39,4 +43,5 @@ Art was done by me (mostly with Asset Forge, and some Synty Studios props). Also
 [CC0]:https://creativecommons.org/publicdomain/zero/1.0/
 [CC-BY 3.0]:https://creativecommons.org/licenses/by/3.0/
 [Forced Square]:https://www.dafont.com/pt/forced-square.font
+[retro 3d look]:https://github.com/DiogoDeAndrade/dithered_palette
 [MIT]:LICENSE

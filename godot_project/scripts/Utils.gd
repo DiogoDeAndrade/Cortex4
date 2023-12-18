@@ -7,7 +7,7 @@ func find_node_of_type(find_type, start_node = null):
 	return find_node_of_type_recursive(start_node, find_type)
 
 func find_node_of_type_recursive(current_node, find_type):
-	var objName = current_node.name
+	var _objName = current_node.name
 	var objClass = current_node.get_class()
 	if objClass == find_type:
 		return current_node

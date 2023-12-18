@@ -23,5 +23,5 @@ func get_interaction_title():
 func interact():
 	print("Interacted with %s" % name)
 	
-func get_display_name(str : String):
-	return str.replace("_", " ")
+func get_display_name(item_name : String):
+	return item_name.replace("_", " ")
