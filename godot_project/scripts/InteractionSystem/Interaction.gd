@@ -10,7 +10,7 @@ var current_collider : Interactable = null
 func _process(_delta):
 	var collider = get_collider()
 	
-	if is_colliding() and collider is Interactable:
+	if is_colliding() and collider is Interactable and collider.can_interact():
 		if current_collider != collider:
 			current_collider = collider
 			emit_signal("selectionChanged", current_collider)

@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu811t5pbexer"]
+
+[ext_resource type="PackedScene" uid="uid://curg4mni8h36p" path="res://models/synty/riot_police/RiotPolice.glb" id="1_rha01"]
+[ext_resource type="Script" path="res://scripts/AnimationPlayout.gd" id="2_n8vk5"]
+[ext_resource type="Script" path="res://scripts/InteractionSystem/Interactable.gd" id="3_ksp13"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_smkkx"]
+
+[node name="RiotPolice" instance=ExtResource("1_rha01")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+script = ExtResource("2_n8vk5")
+animListName = Array[String](["StandGuard", "LookAround"])
+animListProb = Array[float]([50.0, 50.0])
+
+[node name="SimplePeople_RiotCop_White" parent="." index="0"]
+transform = Transform3D(0.00730567, -0.00681172, -0.000477084, 6.95423e-05, 0.000772859, -0.00996985, 0.00682806, 0.00728032, 0.000611996, -0.036784, -0.0932783, 0.0432488)
+
+[node name="Skeleton3D" parent="SimplePeople_RiotCop_White/Hips_jnt" index="0"]
+bones/0/rotation = Quaternion(-0.707835, -0.00650672, 0.00530073, 0.706328)
+bones/1/rotation = Quaternion(-0.0216358, -0.0088794, 0.00108272, 0.999726)
+bones/2/rotation = Quaternion(-0.0216075, -0.00882675, 0.00146079, 0.999727)
+bones/3/rotation = Quaternion(0.00738061, 0.0240902, -0.0126373, 0.999603)
+bones/4/rotation = Quaternion(8.73115e-11, 1.86265e-09, 8.14907e-10, 1)
+bones/5/rotation = Quaternion(0.708592, 0.70267, 0.0431282, -0.0478855)
+bones/6/position = Vector3(-29.249, 4.84288e-06, 0.764299)
+bones/6/rotation = Quaternion(0.794993, 0.567795, 0.161387, 0.139822)
+bones/7/position = Vector3(-47.1188, -9.53674e-07, -1.19209e-06)
+bones/7/rotation = Quaternion(9.14477e-09, 0.252872, 2.214e-08, 0.9675)
+bones/8/rotation = Quaternion(-8.14907e-10, 1, 9.31322e-10, -6.71716e-08)
+bones/9/rotation = Quaternion(0.729338, 0.683773, 0.020762, -0.00946138)
+bones/10/position = Vector3(29.249, 1.13174e-05, -0.7643)
+bones/10/rotation = Quaternion(-0.11583, 0.189146, -0.588871, 0.777199)
+bones/11/position = Vector3(47.119, -4.52995e-06, -1.72261e-07)
+bones/11/rotation = Quaternion(-1.15916e-07, 0.23426, 2.06445e-07, 0.972174)
+bones/12/position = Vector3(44.03, -1.90735e-05, 6.94867e-06)
+bones/13/rotation = Quaternion(0.0816201, 0.677252, 0.729529, 0.049555)
+bones/13/scale = Vector3(1, 0.999999, 1)
+bones/14/rotation = Quaternion(-0.733211, 0.161233, 0.206835, 0.627395)
+bones/15/rotation = Quaternion(0.432566, -0.534883, 0.402914, 0.603694)
+bones/17/rotation = Quaternion(0.609739, -0.0699617, 0.00636449, 0.789483)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(-0.713533, 0.117993, 0.145027, 0.675215)
+bones/19/rotation = Quaternion(0.4608, -0.497058, 0.415973, 0.60627)
+bones/19/scale = Vector3(1, 1, 1)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "StandGuard"
+playback_default_blend_time = 0.2
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.34083, 0)
+collision_layer = 8388608
+collision_mask = 0
+script = ExtResource("3_ksp13")
+interactableName = "Guard"
+interactionText = "Talk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("SphereShape3D_smkkx")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
