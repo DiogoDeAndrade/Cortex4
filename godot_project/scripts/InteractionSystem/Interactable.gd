@@ -2,7 +2,7 @@ extends Node3D
 
 class_name Interactable
 
-signal interact(what : Interactable, who : Node3D)
+signal interact(what : Interactable, who : Node3D, count : int)
 
 enum InteractionMode { Single, Multi }
 enum InteractionDirection { Front, Back, Both }
@@ -13,18 +13,33 @@ enum InteractionDirection { Front, Back, Both }
 @export var interactionText : String = "Interaction Text"
 @export var needItems : bool = false
 @export var items : Array[String] = []
+@export var interactionCooldown : bool = false
+@export var interactionCooldownTimer : float = 1
 
 @onready var player : Player = Utils.find_player() as Player
 
+var timeSinceLastInteraction = 10000;
 var interactionCount = 0;
 
-func is_interactable(interaction_direction : Vector3):
+func is_interactable(interaction_direction : Vector3, check_items : bool = false):
+	# Check cooldown
+	if interactionCooldown:
+		if timeSinceLastInteraction < interactionCooldownTimer:
+			return false
+	# Check multi/single mode
 	if mode == InteractionMode.Single and interactionCount > 0:
 		return false
+	# Check direction
 	if direction == InteractionDirection.Front:
 		return interaction_direction.dot(transform.basis.z) < 0
 	elif direction == InteractionDirection.Back:
 		return interaction_direction.dot(transform.basis.z) > 0
+
+	# Check items
+	if check_items and needItems:
+		for item in items:
+			if (!player.has_item(item)):
+				return false
 		
 	return true
 
@@ -40,8 +55,13 @@ func get_interaction_title():
 	return interactableName
 	
 func run_interaction(who):
-	emit_signal("interact", self, who)
+	emit_signal("interact", self, who, interactionCount)
 	interactionCount += 1
+	timeSinceLastInteraction = 0
 	
 func get_display_name(item_name : String):
 	return item_name.replace("_", " ")
+
+func _process(delta):
+	timeSinceLastInteraction += delta
+	

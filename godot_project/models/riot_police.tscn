@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu811t5pbexer"]
+[gd_scene load_steps=6 format=3 uid="uid://bu811t5pbexer"]
 
 [ext_resource type="PackedScene" uid="uid://curg4mni8h36p" path="res://models/synty/riot_police/RiotPolice.glb" id="1_rha01"]
 [ext_resource type="Script" path="res://scripts/AnimationPlayout.gd" id="2_n8vk5"]
 [ext_resource type="Script" path="res://scripts/InteractionSystem/Interactable.gd" id="3_ksp13"]
+[ext_resource type="Script" path="res://scripts/InteractionSystem/ActionRandomTalk.gd" id="4_v7njo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_smkkx"]
 
@@ -46,8 +47,17 @@ collision_mask = 0
 script = ExtResource("3_ksp13")
 interactableName = "Guard"
 interactionText = "Talk"
+interactionCooldown = true
+interactionCooldownTimer = 3.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
 shape = SubResource("SphereShape3D_smkkx")
 
+[node name="ActionNode" type="Node3D" parent="Area3D" index="1"]
+script = ExtResource("4_v7njo")
+actorName = "Guard"
+mode = 1
+sentences = PackedStringArray("Hail Cortex!", "Move along, citizen.", "For your protection, this is off-limits.", "You\'re not thinking of doing something illegal, are you?", "Do you know how lucky you are?!")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="interact" from="Area3D" to="Area3D/ActionNode" method="on_interact"]
