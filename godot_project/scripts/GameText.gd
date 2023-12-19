@@ -2,16 +2,21 @@ extends ColorRect
 
 class_name GameText
 
+@export var openCloseSpeed : float = 200.0
+
 var timer : float = 0
 var queue : Array[GameTextElement] = []
 var player : Player = null
+var active : bool = false
 
+var OPEN_POS_Y = 1080 - 128
+var CLOSE_POS_Y = 1080
 
 func _ready():
-	visible = false
+	active = false
 
 func display(text : String, textColor : Color = Color.WHITE, actor : String = "", actorColor : Color = Color.YELLOW, time : float = 0, force : bool = false):
-	if visible:
+	if active:
 		if !force:
 			var elem = GameTextElement.new()
 			elem.actorColor = actorColor
@@ -23,10 +28,10 @@ func display(text : String, textColor : Color = Color.WHITE, actor : String = ""
 			return
 	
 	if text == "":
-		visible = false
+		active = false
 		return
 		
-	visible = true
+	active = true
 	
 	var s = ""
 	if actor == "":
@@ -44,6 +49,13 @@ func display(text : String, textColor : Color = Color.WHITE, actor : String = ""
 			player.set_hold(true)
 	
 func _process(delta):
+	if active:
+		# Move up
+		position.y = clamp(position.y - delta * openCloseSpeed, OPEN_POS_Y, CLOSE_POS_Y)
+	else:
+		# Move down
+		position.y = clamp(position.y + delta * openCloseSpeed, OPEN_POS_Y, CLOSE_POS_Y)
+		
 	if timer > 0:
 		timer -= delta
 		if timer <= 0:
@@ -51,7 +63,7 @@ func _process(delta):
 	
 func skip():
 	if queue.is_empty():
-		visible = false
+		active = false
 		if player:
 			player.set_hold(false)
 		return
