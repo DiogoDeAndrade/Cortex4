@@ -1,12 +1,14 @@
-extends Node
+extends Node3D
 
 class_name Interactable
 
 signal interact(what : Interactable, who : Node3D)
 
 enum InteractionMode { Single, Multi }
+enum InteractionDirection { Front, Back, Both }
 
 @export var mode : InteractionMode = InteractionMode.Multi
+@export var direction : InteractionDirection = InteractionDirection.Both
 @export var interactableName : String = "Generic Name"
 @export var interactionText : String = "Interaction Text"
 @export var needItems : bool = false
@@ -16,9 +18,14 @@ enum InteractionMode { Single, Multi }
 
 var interactionCount = 0;
 
-func can_interact():
+func is_interactable(interaction_direction : Vector3):
 	if mode == InteractionMode.Single and interactionCount > 0:
 		return false
+	if direction == InteractionDirection.Front:
+		return interaction_direction.dot(transform.basis.z) < 0
+	elif direction == InteractionDirection.Back:
+		return interaction_direction.dot(transform.basis.z) > 0
+		
 	return true
 
 func get_interaction_text():

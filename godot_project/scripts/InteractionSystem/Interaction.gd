@@ -9,8 +9,9 @@ var current_collider : Interactable = null
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	var collider = get_collider()
+	var direction = (global_transform.basis * -target_position).normalized()
 	
-	if is_colliding() and collider is Interactable and collider.can_interact():
+	if is_colliding() and collider is Interactable and collider.is_interactable(direction):
 		if current_collider != collider:
 			current_collider = collider
 			emit_signal("selectionChanged", current_collider)
@@ -18,3 +19,7 @@ func _process(_delta):
 		if current_collider:
 			current_collider = null
 			emit_signal("selectionChanged", current_collider)
+
+	if current_collider:
+		if Input.is_action_just_pressed("Interact"):
+			current_collider.run_interaction(self)
