@@ -1,5 +1,7 @@
 extends Node3D
 
+class_name AnimationPlayout
+
 @export var animListName : Array[String] = []
 @export var animListProb : Array[float] = []
 @export var baseSpeed : float = 1.0

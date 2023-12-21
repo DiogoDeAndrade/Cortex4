@@ -26,7 +26,7 @@ I also want to use a different engine on every entry, so let's see how that goes
 
 ## Art
 
-Art was done by me (mostly with Asset Forge, and some Synty Studios props). 
+Art was done by me (mostly with Asset Forge, and some Synty Studios props).
 Some [Midjourney] was also used, all filtered with a shader I designed to give a [retro 3d look].
 
 ## Licenses
