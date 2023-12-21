@@ -5,7 +5,7 @@ extends Node3D
 var stolen : bool = false
 var gameText : GameText = null
 
-func on_interact(_what, _who, count):
+func on_interact(_what, _who, _count):
 	if !gameText:
 		gameText = Utils.find_game_text()
 
@@ -18,3 +18,7 @@ func on_interact(_what, _who, count):
 	
 	var player = Utils.find_player()
 	player.add_item(item)
+
+	GameManager.change_guard_awareness(1)
+	
+	stolen = true

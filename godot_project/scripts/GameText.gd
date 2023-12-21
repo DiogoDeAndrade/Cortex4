@@ -19,12 +19,12 @@ func display(text : String, textColor : Color = Color.WHITE, actor : String = ""
 	if active:
 		if !force:
 			var elem = GameTextElement.new()
+			elem.actorName = actor
 			elem.actorColor = actorColor
 			elem.textColor = textColor
 			elem.text = text
-			elem.actor = actor
 			elem.time = time
-			queue.append(queue)
+			queue.append(elem)
 			return
 	
 	if text == "":
@@ -70,4 +70,4 @@ func skip():
 		
 	var item = queue.pop_front()
 	
-	display(item.text, item.textColor, item.actor, item.actorColor, item.time, true)
+	display(item.text, item.textColor, item.actorName, item.actorColor, item.time, true)
