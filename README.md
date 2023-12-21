@@ -12,12 +12,13 @@ I also want to use a different engine on every entry, so let's see how that goes
 
 ## Todo
 
-- Guards talk to player
 - Add crowd in party zone
   - Talk to crowd
   - Pickpocket
-- Create labyrinth area
+- Add female guest
 - "Cutscenes"
+- Create labyrinth area
+- Create secure room
 - Improve ZX shader to use world-space UVs for the dithering effect
 - Improve art overall (polish)
   - Party: decorations, city skyline

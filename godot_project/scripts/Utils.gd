@@ -38,8 +38,8 @@ func find_node_by_name_recursive(current_node, find_name):
 	return null
 			
 
-func find_player():
+func find_player() -> Player:
 	return find_node_by_name("Player", null)
 		
-func find_game_text():
+func find_game_text() -> GameText:
 	return find_node_by_name("GameText", null)

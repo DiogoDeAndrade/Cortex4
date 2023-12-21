@@ -61,5 +61,11 @@ func _physics_process(delta):
 func has_item(item):
 	return inventory.has(item)
 	
+func add_item(item : String, allow_duplicates : bool = false):
+	if !allow_duplicates:
+		if has_item(item):
+			return
+	inventory.append(item)
+	
 func set_hold(h : bool):
 	hold = h
