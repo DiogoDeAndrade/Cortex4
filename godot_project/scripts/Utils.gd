@@ -43,3 +43,6 @@ func find_player() -> Player:
 		
 func find_game_text() -> GameText:
 	return find_node_by_name("GameText", null)
+	
+func find_fader() -> Fader:
+	return find_node_by_name("Fader", null)

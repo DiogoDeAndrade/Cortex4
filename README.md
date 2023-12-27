@@ -12,15 +12,12 @@ I also want to use a different engine on every entry, so let's see how that goes
 
 ## Todo
 
-- Add crowd in party zone
-  - Talk to crowd
-  - Pickpocket
-- Add female guest
 - "Cutscenes"
 - Create labyrinth area
 - Create secure room
 - Improve ZX shader to use world-space UVs for the dithering effect
 - Improve art overall (polish)
+  - Add female guest
   - Party: decorations, city skyline
 - Bugs
   - Camera control is wrong - something camera flips
@@ -28,7 +25,7 @@ I also want to use a different engine on every entry, so let's see how that goes
 ## Art
 
 Art was done by me (mostly with Asset Forge, and some Synty Studios props).
-Some [Midjourney] was also used, all filtered with a shader I designed to give a [retro 3d look].
+Some [Midjourney] and Dall-E were also used, all filtered with a shader I designed to give a [retro 3d look].
 
 ## Licenses
 

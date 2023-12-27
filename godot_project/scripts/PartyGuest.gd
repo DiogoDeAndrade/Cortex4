@@ -1,5 +1,7 @@
 extends AnimationPlayout
 
+class_name PartyGuest
+
 @export var heightScale : Vector2 = Vector2.ONE
 @export var groupCenter : Node3D
 @export var textures : Array[Texture]

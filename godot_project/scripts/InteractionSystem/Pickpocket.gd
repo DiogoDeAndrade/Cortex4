@@ -14,7 +14,7 @@ func on_interact(_what, _who, _count):
 		return
 		
 	var item = possibleItems[randi() % possibleItems.size()]
-	gameText.display("You stolen %s!" % item, Color.YELLOW, "", Color.WHITE, 2, true)
+	gameText.display("You stole %s!" % item, Color.YELLOW, "", Color.WHITE, 2, true)
 	
 	var player = Utils.find_player()
 	player.add_item(item)
