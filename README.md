@@ -12,15 +12,14 @@ I also want to use a different engine on every entry, so let's see how that goes
 
 ## Todo
 
-- "Cutscenes"
-- Create labyrinth area
+- Create secure area
 - Create secure room
-- Improve ZX shader to use world-space UVs for the dithering effect
+- Bugs
+  - Camera control is wrong - something camera flips
 - Improve art overall (polish)
   - Add female guest
   - Party: decorations, city skyline
-- Bugs
-  - Camera control is wrong - something camera flips
+- Improve ZX shader to use world-space UVs for the dithering effect
 
 ## Art
 

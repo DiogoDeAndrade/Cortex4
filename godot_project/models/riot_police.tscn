@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bu811t5pbexer"]
+[gd_scene load_steps=7 format=3 uid="uid://bf6a6jvq5yuf"]
 
 [ext_resource type="PackedScene" uid="uid://curg4mni8h36p" path="res://models/synty/riot_police/RiotPolice.glb" id="1_rha01"]
 [ext_resource type="Script" path="res://scripts/AnimationPlayout.gd" id="2_n8vk5"]
