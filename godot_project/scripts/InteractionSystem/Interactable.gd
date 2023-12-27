@@ -33,11 +33,13 @@ func is_interactable(interaction_direction : Vector3, check_items : bool = false
 	if direction == InteractionDirection.Front:
 		var dp = interaction_direction.dot(global_transform.basis.z)
 		#print("Front::", get_parent().name, "// Dir = ", interaction_direction, " // Basis=", global_transform.basis.z, " // DP = ", dp);
-		return dp > 0
+		if dp < 0:
+			return false
 	elif direction == InteractionDirection.Back:
 		var dp = interaction_direction.dot(global_transform.basis.z)
 		#print("Back::", get_parent().name, "// Dir = ", interaction_direction, " // Basis=", global_transform.basis.z, " // DP = ", dp);
-		return dp < 0
+		if dp > 0:
+			return false
 
 	# Check items
 	if check_items and needItems:
