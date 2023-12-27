@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://2dcbdb1i6qmb"]
+
+[ext_resource type="Script" path="res://scripts/ImageDisplay.gd" id="1_jff4a"]
+[ext_resource type="Texture2D" uid="uid://b64wwswtd42is" path="res://images/caught_by_drone.png" id="2_y73ou"]
+[ext_resource type="Theme" uid="uid://cawix4oao53vt" path="res://fonts/main_theme.tres" id="3_3biwq"]
+[ext_resource type="PackedScene" uid="uid://di2chid0vbfqe" path="res://prefabs/fader.tscn" id="4_fl76b"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jff4a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_y73ou")
+
+[node name="GameOver" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -823.0
+offset_top = -444.0
+offset_right = 824.0
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_3biwq")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 306
+text = "GAME OVER"
+
+[node name="GameOverReason" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.5
+offset_top = -225.0
+offset_right = 249.5
+offset_bottom = -192.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_3biwq")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 41
+text = "You got caught by a drone!"
+
+[node name="Fader" parent="." instance=ExtResource("4_fl76b")]

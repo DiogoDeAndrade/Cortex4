@@ -11,11 +11,12 @@ func start_play():
 func _process(_delta):
 	if storyBeat == 0:
 		var gameText = Utils.find_game_text()
-		gameText.display("Ok, Nyx, this is it...\nTime to make these bastards bleed...", Color.WHITE, "", Color.WHITE, 0, false)
-		gameText.display("My contact said he was wearing a T-shirt, should be easy to spot!", Color.WHITE, "", Color.WHITE, 0, false)
-		gameText.display("He has the code in his back pocket...", Color.WHITE, "", Color.WHITE, 0, false)
-		
-		storyBeat = 1
+		if gameText:
+			gameText.display("Ok, Nyx, this is it...\nTime to make these bastards bleed...", Color.WHITE, "", Color.WHITE, 0, false)
+			gameText.display("My contact said he was wearing a T-shirt, should be easy to spot!", Color.WHITE, "", Color.WHITE, 0, false)
+			gameText.display("He has the code in his back pocket...", Color.WHITE, "", Color.WHITE, 0, false)
+			
+			storyBeat = 1
 	
 func change_guard_awareness(delta):
 	guardAwareness += delta

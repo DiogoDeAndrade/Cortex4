@@ -1,17 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://ch812gjcikpaf"]
+[gd_scene load_steps=3 format=3 uid="uid://ch812gjcikpaf"]
 
+[ext_resource type="Script" path="res://scripts/Drone.gd" id="1_nrbe0"]
 [ext_resource type="PackedScene" uid="uid://bmpcrg267jf68" path="res://models/recon_drone.glb" id="1_wlnpm"]
 
 [node name="Drone" type="Node3D"]
 transform = Transform3D(1.00003, 0, 0, 0, 1, 0, 0, 0, 1.00003, 0, 0, 0)
+script = ExtResource("1_nrbe0")
 
 [node name="Gfx" parent="." instance=ExtResource("1_wlnpm")]
 transform = Transform3D(-0.219186, 0, 0.449397, 0, 0.5, 0, -0.449397, 0, -0.219186, 0, 0, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.971553, 0.236821, 0, -0.236821, 0.971553, 0, 0, -0.657687)
+transform = Transform3D(0.99997, 0, 0, 0, 0.971552, 0.236828, 0, -0.236821, 0.971522, 0, -0.102893, -1.0798)
 light_color = Color(1, 0.501961, 0, 1)
-light_energy = 3.329
+light_energy = 4.467
 shadow_enabled = true
 spot_range = 13.809
-spot_attenuation = 0.366022
+spot_attenuation = 0.554786
