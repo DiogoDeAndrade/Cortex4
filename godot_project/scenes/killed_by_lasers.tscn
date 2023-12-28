@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://c83gcf5s5uje0"]
+
+[ext_resource type="Script" path="res://scripts/ImageDisplay.gd" id="1_5g4jx"]
+[ext_resource type="Texture2D" uid="uid://chj2ml3kvpbnh" path="res://images/killed_by_lasers.png" id="2_y3gqa"]
+[ext_resource type="Theme" uid="uid://cawix4oao53vt" path="res://fonts/main_theme.tres" id="3_0dumx"]
+[ext_resource type="PackedScene" uid="uid://di2chid0vbfqe" path="res://prefabs/fader.tscn" id="4_luog5"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_5g4jx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_y3gqa")
+
+[node name="GameOver" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -823.0
+offset_top = -444.0
+offset_right = 824.0
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_0dumx")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 306
+text = "GAME OVER"
+
+[node name="GameOverReason" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.5
+offset_top = -225.0
+offset_right = 249.5
+offset_bottom = -192.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_0dumx")
+theme_override_colors/font_color = Color(1, 0.0941176, 0.117647, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 41
+text = "You got hit by the security lasers!"
+
+[node name="Fader" parent="." instance=ExtResource("4_luog5")]
