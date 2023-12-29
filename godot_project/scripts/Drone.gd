@@ -9,7 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if !self.visible:
+	if !is_visible_in_tree():
 		return
 	var player = Utils.find_player()
 	if !player:

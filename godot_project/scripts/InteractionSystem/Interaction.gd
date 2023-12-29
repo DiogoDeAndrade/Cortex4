@@ -16,10 +16,15 @@ func _process(_delta):
 	var collider = get_collider()
 	var direction = (global_transform.basis * -target_position).normalized()
 	
-	if is_colliding() and collider is Interactable and collider.is_interactable(direction, false):
-		if current_collider != collider:
-			current_collider = collider
-			emit_signal("selectionChanged", current_collider)
+	if is_colliding():
+		if collider is Interactable and collider.is_interactable(direction, false):
+			if current_collider != collider:
+				current_collider = collider
+				emit_signal("selectionChanged", current_collider)
+		else:
+			if current_collider:
+				current_collider = null
+				emit_signal("selectionChanged", current_collider)
 	else:
 		if current_collider:
 			current_collider = null

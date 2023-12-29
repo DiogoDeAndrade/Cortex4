@@ -22,7 +22,8 @@ void fragment()
 	vec2 uv = SCREEN_UV;
 	uv = floor(uv * resolution)/resolution;
 	
-	vec3 screen_color = texture(screen_texture, uv).rgb;
+	vec4 screen_lookup = texture(screen_texture, uv);
+	vec3 screen_color = screen_lookup.rgb;
 	screen_color = floor(screen_color * colorLevels) / colorLevels;
 	vec3 normal = texture(normal_texture, uv).rgb;
 	float roughness =  texture(normal_texture, uv).w;
@@ -44,6 +45,8 @@ void fragment()
 		ALBEDO.rgb = c1.rgb;
 	else
 		ALBEDO.rgb = c2.rgb;
+		
+	ALPHA = screen_lookup.a;
 	
 	// Output mix factor
 	//ALBEDO.rgb = vec3(c2.a, c2.a, c2.a);	

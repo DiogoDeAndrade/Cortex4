@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6pkhfmro82j2"]
+
+[ext_resource type="Texture2D" uid="uid://bk8gt1lns01ew" path="res://images/painting01.png" id="1_8jep7"]
+[ext_resource type="Script" path="res://scripts/InteractionSystem/Interactable_JustText.gd" id="2_y500e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhkn7"]
+albedo_texture = ExtResource("1_8jep7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_fknmf"]
+material = SubResource("StandardMaterial3D_bhkn7")
+size = Vector2(2.4, 1.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qblwn"]
+size = Vector3(2.30328, 1.55566, 0.261719)
+
+[node name="Painting01" type="MeshInstance3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.3262e-07, 0.129086, -10.1461)
+mesh = SubResource("QuadMesh_fknmf")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8388608
+collision_mask = 0
+script = ExtResource("2_y500e")
+text = "Pretty, but I didn't come here for this..."
+actorName = "Nyx"
+actorColor = Color(1, 1, 0, 1)
+direction = 0
+interactableName = "The Night Full of Stars"
+interactionText = "Steal"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00082398, 0.034668, -0.369141)
+shape = SubResource("BoxShape3D_qblwn")

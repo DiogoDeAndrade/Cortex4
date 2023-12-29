@@ -22,6 +22,9 @@ var timeSinceLastInteraction = 10000;
 var interactionCount = 0;
 
 func is_interactable(interaction_direction : Vector3, check_items : bool = false):
+	if !is_visible_in_tree():
+		return false
+		
 	# Check cooldown
 	if interactionCooldown:
 		if timeSinceLastInteraction < interactionCooldownTimer:
