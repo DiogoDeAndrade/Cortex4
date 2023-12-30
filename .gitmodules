@@ -1,0 +1,3 @@
+[submodule "godot_project/models/synty"]
+	path = godot_project/models/synty
+	url = https://github.com/DiogoDeAndrade/CortexChronicles4_Private

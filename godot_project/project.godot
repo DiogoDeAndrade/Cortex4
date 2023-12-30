@@ -11,7 +11,9 @@ config_version=5
 [application]
 
 config/name="Cortex Chronicles 4"
+run/main_scene="res://scenes/logo.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 
 [autoload]
 
@@ -22,7 +24,7 @@ GameManager="*res://scripts/GameManager.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/initial_position_type=2
+window/size/mode=3
 
 [input]
 
