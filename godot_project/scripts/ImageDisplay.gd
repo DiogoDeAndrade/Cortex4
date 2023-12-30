@@ -15,6 +15,8 @@ func _process(_delta):
 				GameManager.start_play();
 			elif nextScreen == "title":
 				GameManager.load_scene("title")
+			elif nextScreen == "story":
+				GameManager.load_scene("story_start")
 	else:
 		if !Input.is_anything_pressed():
 			keyReleased = true

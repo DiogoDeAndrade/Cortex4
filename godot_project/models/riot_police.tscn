@@ -18,7 +18,7 @@ animListName = Array[String](["StandGuard", "LookAround"])
 animListProb = Array[float]([50.0, 50.0])
 
 [node name="SimplePeople_RiotCop_White" parent="." index="0"]
-transform = Transform3D(0.00730567, -0.00681172, -0.000477084, 6.95423e-05, 0.000772859, -0.00996985, 0.00682806, 0.00728032, 0.000611996, -0.036784, -0.0932783, 0.0432488)
+transform = Transform3D(0.00584453, -0.00544938, -0.000381663, 5.56332e-05, 0.000618281, -0.00797588, 0.00546245, 0.00582426, 0.000489591, -0.036784, -0.0932783, 0.0432488)
 
 [node name="Skeleton3D" parent="SimplePeople_RiotCop_White/Hips_jnt" index="0"]
 bones/0/rotation = Quaternion(-0.707107, 2.79881e-09, 9.87817e-10, 0.707107)
@@ -45,7 +45,7 @@ autoplay = "StandGuard"
 playback_default_blend_time = 0.2
 
 [node name="Area3D" type="Area3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.34083, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76478, 0)
 collision_layer = 8388608
 collision_mask = 0
 script = ExtResource("3_ksp13")

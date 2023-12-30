@@ -107,7 +107,6 @@ expand_mode = 2
 stretch_mode = 5
 
 [node name="Fader" parent="." instance=ExtResource("3_nbaf6")]
-visible = false
 
 [node name="UI" type="CanvasLayer" parent="."]
 

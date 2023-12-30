@@ -1,0 +1,242 @@
+[gd_scene load_steps=12 format=3 uid="uid://dnig8bsn0vwky"]
+
+[ext_resource type="Script" path="res://scripts/ImageSequenceDisplay.gd" id="1_5ihng"]
+[ext_resource type="Script" path="res://scripts/OnVisibleDisplayText.gd" id="2_flmkk"]
+[ext_resource type="Texture2D" uid="uid://caejinltl21s0" path="res://images/story05.png" id="3_t6tk2"]
+[ext_resource type="Texture2D" uid="uid://cycjel7wlg8vr" path="res://images/story06.png" id="4_fluq5"]
+[ext_resource type="Texture2D" uid="uid://c8sipnl2ywppn" path="res://images/story07.png" id="5_ahfqo"]
+[ext_resource type="Texture2D" uid="uid://sfxpjumnwd2v" path="res://images/story08.png" id="6_q6oq1"]
+[ext_resource type="PackedScene" uid="uid://di2chid0vbfqe" path="res://prefabs/fader.tscn" id="7_87rry"]
+[ext_resource type="Texture2D" uid="uid://cl0drid4xhc2m" path="res://images/story09.png" id="7_mht54"]
+[ext_resource type="Script" path="res://scripts/GameText.gd" id="8_qprr8"]
+[ext_resource type="Texture2D" uid="uid://c3ageybjhcxny" path="res://images/story10.png" id="8_xqueb"]
+[ext_resource type="Theme" uid="uid://cawix4oao53vt" path="res://data/main_theme.tres" id="9_23hk5"]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("screens")]
+script = ExtResource("1_5ihng")
+nextScreen = "title"
+screens = [NodePath("Story01"), NodePath("Story02"), NodePath("Story03"), NodePath("Story04"), NodePath("Story05"), NodePath("Story06"), NodePath("Story07")]
+
+[node name="Story01" type="CanvasLayer" parent="."]
+script = ExtResource("2_flmkk")
+text = Array[String](["[Nyx]:...", "[Nyx]: I got him, Aria... It isn't much, but it's something, I hope...", "[Somebody]: ...polite cough..."])
+
+[node name="ColorRect" type="ColorRect" parent="Story01"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Story01"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_t6tk2")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Story02" type="CanvasLayer" parent="."]
+script = ExtResource("2_flmkk")
+text = Array[String](["[Nyx]:What?! Who are you?!"])
+
+[node name="ColorRect" type="ColorRect" parent="Story02"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Story02"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_fluq5")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Story03" type="CanvasLayer" parent="."]
+script = ExtResource("2_flmkk")
+text = Array[String](["[Stranger]: Sorry, Miss Sterling. My name is Rowan, you might have seen me on TV...", "[Nyx]: Rowan... as in Reed? The rebel?", "[Rowan]: Well, I think that might be an overstatement... I'm just someone on Cortex's bad side, I think..."])
+
+[node name="ColorRect" type="ColorRect" parent="Story03"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Story03"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ahfqo")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Story04" type="CanvasLayer" parent="."]
+script = ExtResource("2_flmkk")
+text = Array[String](["[Rowan]: We've been following your progress since Ramon told us about you...", "[Nyx]: Ramon, the forger?! That no good...", "[Rowan]: He also works for us, and he knows we're interested in individuals with unique skills...", "[Rowan]: Individuals like you, Miss Sterling...", "[Nyx]: Me?! But...", "[Rowan]: We know you don't have any love for Cortex and his cronies... so we were wondering if you'd like to join our efforts.", "[Nyx]: We? Efforts?", "[Rowan]: Well, for obvious reasons I can't say who 'we' are.", "[Rowan]: But our efforts aren't anything dramatic like overthrowing Cortex... That won't work...", "[Nyx]: If not that, then?", "[Rowan]: For now, awareness and embarassment... \"Overthrowing\" might come later!"])
+
+[node name="ColorRect" type="ColorRect" parent="Story04"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Story04"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_q6oq1")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Story05" type="CanvasLayer" parent="."]
+script = ExtResource("2_flmkk")
+text = Array[String](["[Rowan]: We're just looking for a better future, free from the inhuman shackles of AI...", "[Nyx]: ...", "[Nyx]: What do you want from me?", "[Rowan]: You just infiltrated the highest echelon of society and stole a necklace from a secure room...", "[Rowan]: I'm pretty sure we'll find a use for your skills, Miss Sterling..."])
+
+[node name="ColorRect" type="ColorRect" parent="Story05"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Story05"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_mht54")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Story06" type="CanvasLayer" parent="."]
+script = ExtResource("2_flmkk")
+text = Array[String](["[Nyx]: ...", "[Nyx]: Happy new year, Mr. Reed...", "[Rowan]: Happy new year, Miss Sterling..."])
+
+[node name="ColorRect" type="ColorRect" parent="Story06"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Story06"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_xqueb")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Story07" type="CanvasLayer" parent="."]
+script = ExtResource("2_flmkk")
+text = Array[String]([""])
+
+[node name="ColorRect" type="ColorRect" parent="Story07"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Story07"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_xqueb")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="GameOver" type="Label" parent="Story07"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -823.0
+offset_top = -444.0
+offset_right = 824.0
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_23hk5")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 306
+text = "THE END"
+horizontal_alignment = 1
+
+[node name="Fader" parent="." instance=ExtResource("7_87rry")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GameText" type="ColorRect" parent="UI"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_right = -320.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.890196)
+script = ExtResource("8_qprr8")
+openCloseSpeed = 400.0
+
+[node name="Text" type="RichTextLabel" parent="UI/GameText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_23hk5")
+theme_override_constants/line_separation = 5
+bbcode_enabled = true
+text = "[center][color=yellow]Actor: [color=white]Lorem ipsum Ph'nglui mglw'nafh Cthulhu R'lyeh afls'uhn ehye cep vulgtm, gnaiih nilgh'ri syha'h hafh'drn zhro nanilgh'ri gnaiih li'hee, wgah'n fm'latgh nnnvulgtlagln nglui h'sgn'wahl mg. "
+fit_content = true
+
+[connection signal="visibility_changed" from="Story01" to="Story01" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Story02" to="Story02" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Story03" to="Story03" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Story04" to="Story04" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Story05" to="Story05" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Story06" to="Story06" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Story07" to="Story07" method="_on_visibility_changed"]

@@ -12,12 +12,6 @@ I also want to use a different engine on every entry, so let's see how that goes
 
 ## Todo
 
-- End screen
-- Bugs
-  - Camera control is wrong - something camera flips
-- Improve art overall (polish)
-  - Add female guest
-  - Party: city skyline
 - Improve ZX shader to use world-space UVs for the dithering effect
 
 ## Art
