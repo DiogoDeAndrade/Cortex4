@@ -378,7 +378,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53278, -0.00737286, -8.382
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5934, -0.00737238, -8.9524)
 
 [node name="Group5" parent="Characters/Guests" instance=ExtResource("11_axf4w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.6526, -0.00737333, -9.74543)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.6526, 0.369698, -9.74543)
 
 [node name="Group6" parent="Characters/Guests" instance=ExtResource("11_axf4w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29421, -0.00737333, -3.97035)
@@ -529,3 +529,4 @@ autowrap_mode = 0
 [editable path="Environment/Painting06"]
 [editable path="Environment/Painting07"]
 [editable path="Characters/ContactGroup/Contact"]
+[editable path="Characters/ContactGroup/business"]

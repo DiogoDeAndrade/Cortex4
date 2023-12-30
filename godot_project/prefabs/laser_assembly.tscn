@@ -15,7 +15,7 @@ diffuse_mode = 1
 specular_mode = 2
 disable_ambient_light = true
 disable_fog = true
-albedo_color = Color(1, 1, 0, 1)
+albedo_color = Color(1, 0, 0, 1)
 disable_receive_shadows = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ldqw8"]
@@ -125,7 +125,7 @@ shape = SubResource("BoxShape3D_ldqw8")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="LaserArray"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.66829, 2.13898)
-light_color = Color(1, 1, 0, 1)
+light_color = Color(1, 0.454902, 0, 1)
 light_energy = 3.0
 shadow_enabled = true
 
