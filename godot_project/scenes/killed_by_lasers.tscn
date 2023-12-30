@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/ImageDisplay.gd" id="1_5g4jx"]
 [ext_resource type="Texture2D" uid="uid://chj2ml3kvpbnh" path="res://images/killed_by_lasers.png" id="2_y3gqa"]
-[ext_resource type="Theme" uid="uid://cawix4oao53vt" path="res://fonts/main_theme.tres" id="3_0dumx"]
+[ext_resource type="Theme" uid="uid://cawix4oao53vt" path="res://data/main_theme.tres" id="3_0dumx"]
 [ext_resource type="PackedScene" uid="uid://di2chid0vbfqe" path="res://prefabs/fader.tscn" id="4_luog5"]
 
 [node name="Node2D" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_5g4jx")
+nextScreen = "title"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

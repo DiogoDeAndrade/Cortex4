@@ -66,8 +66,10 @@ func skip():
 		active = false
 		if player:
 			player.set_hold(false)
-		return
+		return false
 		
 	var item = queue.pop_front()
 	
 	display(item.text, item.textColor, item.actorName, item.actorColor, item.time, true)
+	
+	return true

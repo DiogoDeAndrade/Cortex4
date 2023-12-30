@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://scripts/InteractionSystem/Interactable_JustText.gd" id="13_yp6q1"]
 [ext_resource type="PackedScene" uid="uid://ce25poqi0fu72" path="res://models/synty/heist/Bookcase.fbx" id="14_ibmxb"]
 [ext_resource type="Script" path="res://scripts/GameText.gd" id="14_t6hjk"]
-[ext_resource type="Theme" uid="uid://cawix4oao53vt" path="res://fonts/main_theme.tres" id="15_uc2c4"]
+[ext_resource type="Theme" uid="uid://cawix4oao53vt" path="res://data/main_theme.tres" id="15_uc2c4"]
 [ext_resource type="PackedScene" uid="uid://c88gnxitdotnw" path="res://models/synty/heist/Display2.fbx" id="16_7bpep"]
 [ext_resource type="Script" path="res://scripts/InteractionSystem/InteractionText.gd" id="16_tv6o1"]
 [ext_resource type="Material" uid="uid://clclaerwgqnmt" path="res://models/synty/heist/heist_mat01_trans.tres" id="17_capsj"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpq0m2whyjlut"]
+
+[ext_resource type="Script" path="res://scripts/ImageDisplay.gd" id="1_h226c"]
+[ext_resource type="Texture2D" uid="uid://b3ym54yt0re14" path="res://images/logo.png" id="2_sktdt"]
+[ext_resource type="PackedScene" uid="uid://di2chid0vbfqe" path="res://prefabs/fader.tscn" id="4_tx1r1"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_h226c")
+nextScreen = "title"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sktdt")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Fader" parent="." instance=ExtResource("4_tx1r1")]

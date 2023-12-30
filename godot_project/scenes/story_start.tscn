@@ -1,0 +1,148 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqstwjithp3xt"]
+
+[ext_resource type="Script" path="res://scripts/ImageSequenceDisplay.gd" id="1_luk5r"]
+[ext_resource type="Texture2D" uid="uid://cyb0iglckihll" path="res://images/story01.png" id="2_ao6ov"]
+[ext_resource type="Script" path="res://scripts/OnVisibleDisplayText.gd" id="2_umgy5"]
+[ext_resource type="PackedScene" uid="uid://di2chid0vbfqe" path="res://prefabs/fader.tscn" id="3_nbaf6"]
+[ext_resource type="Script" path="res://scripts/GameText.gd" id="4_m6i1e"]
+[ext_resource type="Texture2D" uid="uid://cqspuyapcultf" path="res://images/story02.png" id="4_ngjds"]
+[ext_resource type="Texture2D" uid="uid://ck0m6low5ra6t" path="res://images/story03.png" id="5_g8h80"]
+[ext_resource type="Theme" uid="uid://cawix4oao53vt" path="res://data/main_theme.tres" id="5_uam6j"]
+[ext_resource type="Texture2D" uid="uid://b7snk2a64ri88" path="res://images/story04.png" id="6_hp8mk"]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("screens")]
+script = ExtResource("1_luk5r")
+screens = [NodePath("Story01"), NodePath("Story02"), NodePath("Story03"), NodePath("Story04")]
+
+[node name="Story01" type="CanvasLayer" parent="."]
+script = ExtResource("2_umgy5")
+text = Array[String](["[Nyx]:Tonight is the night... All these months of scheming and slow, deliberate execution are going to pay off... Or not..."])
+
+[node name="ColorRect" type="ColorRect" parent="Story01"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Story01"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ao6ov")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Story02" type="CanvasLayer" parent="."]
+script = ExtResource("2_umgy5")
+text = Array[String](["[Nyx]:First step, getting inside...", "[Nyx]: I paid a small fortune to a forger for an invite, let's see if it was money well spent!"])
+
+[node name="ColorRect" type="ColorRect" parent="Story02"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Story02"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ngjds")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Story03" type="CanvasLayer" parent="."]
+script = ExtResource("2_umgy5")
+text = Array[String](["[Doorman]: Invitation, please, Miss?", "[Nyx]:...", "[Doorman]: All right, Miss Sterling, enjoy the party..."])
+
+[node name="ColorRect" type="ColorRect" parent="Story03"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Story03"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_g8h80")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Story04" type="CanvasLayer" parent="."]
+script = ExtResource("2_umgy5")
+text = Array[String](["[Nyx]: So far, so good..."])
+
+[node name="ColorRect" type="ColorRect" parent="Story04"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Story04"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_hp8mk")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Fader" parent="." instance=ExtResource("3_nbaf6")]
+visible = false
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GameText" type="ColorRect" parent="UI"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_right = -320.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.890196)
+script = ExtResource("4_m6i1e")
+openCloseSpeed = 400.0
+
+[node name="Text" type="RichTextLabel" parent="UI/GameText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_uam6j")
+theme_override_constants/line_separation = 5
+bbcode_enabled = true
+text = "[center][color=yellow]Actor: [color=white]Lorem ipsum Ph'nglui mglw'nafh Cthulhu R'lyeh afls'uhn ehye cep vulgtm, gnaiih nilgh'ri syha'h hafh'drn zhro nanilgh'ri gnaiih li'hee, wgah'n fm'latgh nnnvulgtlagln nglui h'sgn'wahl mg. "
+fit_content = true
+
+[connection signal="visibility_changed" from="Story01" to="Story01" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Story02" to="Story02" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Story03" to="Story03" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Story04" to="Story04" method="_on_visibility_changed"]

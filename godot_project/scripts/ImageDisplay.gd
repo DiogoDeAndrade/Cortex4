@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var nextScreen = "game"
+
 var keyReleased = false;
 
 func _ready():
@@ -9,7 +11,10 @@ func _ready():
 func _process(_delta):
 	if keyReleased:
 		if Input.is_anything_pressed():
-			GameManager.start_play();
+			if nextScreen == "game":
+				GameManager.start_play();
+			elif nextScreen == "title":
+				GameManager.load_scene("title")
 	else:
 		if !Input.is_anything_pressed():
 			keyReleased = true

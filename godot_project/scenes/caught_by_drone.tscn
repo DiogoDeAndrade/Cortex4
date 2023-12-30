@@ -2,15 +2,17 @@
 
 [ext_resource type="Script" path="res://scripts/ImageDisplay.gd" id="1_jff4a"]
 [ext_resource type="Texture2D" uid="uid://b64wwswtd42is" path="res://images/caught_by_drone.png" id="2_y73ou"]
-[ext_resource type="Theme" uid="uid://cawix4oao53vt" path="res://fonts/main_theme.tres" id="3_3biwq"]
+[ext_resource type="Theme" uid="uid://cawix4oao53vt" path="res://data/main_theme.tres" id="3_3biwq"]
 [ext_resource type="PackedScene" uid="uid://di2chid0vbfqe" path="res://prefabs/fader.tscn" id="4_fl76b"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jff4a")
+nextScreen = "title"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

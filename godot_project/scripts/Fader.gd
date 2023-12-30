@@ -5,29 +5,32 @@ class_name Fader
 @export var speed : float = 4.0
 var fadeDir : float = 0.0
 var fadeFunc : Callable
+var runCall : bool = false
 
 func _ready():
 	fade_in();
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if runCall:
+		var f = fadeFunc
+		fadeFunc = func(): pass
+		f.call()
+		runCall = false
+
 	if fadeDir < 0:
 		var tmp = $ColorRect.color
 		tmp.a = clamp(tmp.a - delta * speed * abs(fadeDir), 0, 1)
 		if tmp.a <= 0:
 			fadeDir = 0
-			var f = fadeFunc
-			fadeFunc = func(): pass
-			f.call()
+			runCall = true			
 		$ColorRect.color = tmp
 	elif fadeDir > 0:
 		var tmp = $ColorRect.color
 		tmp.a = clamp(tmp.a + delta * speed * abs(fadeDir), 0, 1)
-		if tmp.a >= 1:
+		if tmp.a >= 1:			
 			fadeDir = 0
-			var f = fadeFunc
-			fadeFunc = func(): pass
-			f.call()
+			runCall = true			
 		$ColorRect.color = tmp
 
 func fade_in(callback : Callable = func(): pass):

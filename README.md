@@ -1,4 +1,4 @@
-# THE CORTEX CHRONICLES, CHAPTER 4 - The Heist of Nyx Sterling
+# THE CORTEX CHRONICLES, CHAPTER 4 - The Vengeance of Nyx Sterling
 
 ![TitleImage](screenshots/screen02.png)
 
@@ -12,7 +12,6 @@ I also want to use a different engine on every entry, so let's see how that goes
 
 ## Todo
 
-- Start screen
 - End screen
 - Bugs
   - Camera control is wrong - something camera flips

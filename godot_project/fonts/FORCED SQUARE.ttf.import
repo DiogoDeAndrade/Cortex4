@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bhyg50mn56w67"
-path="res://.godot/imported/FORCED SQUARE.ttf-2284196c71dcaf05da5a68a0c1b43d1d.fontdata"
+path="res://.godot/imported/FORCED SQUARE.ttf-3ea26472cee98d33d4a3bb2021eccebe.fontdata"
 
 [deps]
 
-source_file="res://data/FORCED SQUARE.ttf"
-dest_files=["res://.godot/imported/FORCED SQUARE.ttf-2284196c71dcaf05da5a68a0c1b43d1d.fontdata"]
+source_file="res://fonts/FORCED SQUARE.ttf"
+dest_files=["res://.godot/imported/FORCED SQUARE.ttf-3ea26472cee98d33d4a3bb2021eccebe.fontdata"]
 
 [params]
 
